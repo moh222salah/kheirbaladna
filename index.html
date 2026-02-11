@@ -1,0 +1,2976 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pyramids - Your Partner in Sustainable Agricultural Development | شريكك في التنمية الزراعية المستدامة">
+    <title> Green Pyramids </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style> 
+
+/* ========================
+   CSS VARIABLES & THEME
+   ======================== */
+:root {
+    /* Light Theme Colors */
+    --primary: #2D5016;
+    --primary-light: #6B9F4C;
+    --primary-dark: #1A3009;
+    --secondary: #8BC34A;
+    --accent: #CDDC39;
+    
+    --background: #F1F8F4;
+    --surface: rgba(255, 255, 255, 0.7);
+    --surface-hover: rgba(255, 255, 255, 0.85);
+    
+    --text-primary: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-tertiary: #7A7A7A;
+    
+    --gradient-1: linear-gradient(135deg, #2D5016 0%, #6B9F4C 100%);
+    --gradient-2: linear-gradient(135deg, #6B9F4C 0%, #8BC34A 100%);
+    --gradient-3: linear-gradient(135deg, #8BC34A 0%, #CDDC39 100%);
+    
+    --shadow-sm: 0 2px 8px rgba(45, 80, 22, 0.08);
+    --shadow-md: 0 4px 16px rgba(45, 80, 22, 0.12);
+    --shadow-lg: 0 8px 32px rgba(45, 80, 22, 0.16);
+    
+    --blur-light: blur(20px);
+    --blur-heavy: blur(40px);
+    
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    --border-radius: 16px;
+    --border-radius-lg: 24px;
+}
+
+.theme-dark {
+    --primary: #6B9F4C;
+    --primary-light: #8BC34A;
+    --primary-dark: #2D5016;
+    --secondary: #CDDC39;
+    --accent: #FFC107;
+    
+    --background: #0A1F0D;
+    --surface: rgba(30, 50, 35, 0.6);
+    --surface-hover: rgba(30, 50, 35, 0.8);
+    
+    --text-primary: #F1F8F4;
+    --text-secondary: #C5D9CB;
+    --text-tertiary: #8FA895;
+    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================
+   RESET & BASE STYLES
+   ======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Outfit', 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+body[dir="rtl"] {
+    font-family: 'Cairo', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ========================
+   ANIMATED BACKGROUND
+   ======================== */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #2D5016, #6B9F4C);
+    top: -200px;
+    left: -200px;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #8BC34A, #CDDC39);
+    top: 50%;
+    right: -150px;
+    animation-delay: -5s;
+}
+
+.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #6B9F4C, #2D5016);
+    bottom: -100px;
+    left: 30%;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(50px, -50px) rotate(120deg); }
+    66% { transform: translate(-30px, 30px) rotate(240deg); }
+}
+
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ========================
+   GLASS CARD EFFECT
+   ======================== */
+.glass-card {
+    background: var(--surface);
+    backdrop-filter: var(--blur-light);
+    -webkit-backdrop-filter: var(--blur-light);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+    background: var(--surface-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ========================
+   NAVIGATION
+   ======================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all var(--transition-base);
+}
+
+.navbar.scrolled {
+    background: var(--surface);
+    backdrop-filter: var(--blur-heavy);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: transform var(--transition-fast);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--primary);
+    transition: transform var(--transition-base);
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(180deg);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-1);
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle,
+.lang-toggle {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: var(--surface);
+    backdrop-filter: var(--blur-light);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle:hover,
+.lang-toggle:hover {
+    background: var(--surface-hover);
+    transform: scale(1.1);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    color: var(--primary);
+    transition: all var(--transition-base);
+}
+
+.sun-icon {
+    position: absolute;
+}
+
+.moon-icon {
+    position: absolute;
+    opacity: 0;
+}
+
+.theme-dark .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.theme-dark .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.lang-toggle .lang-text {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--primary);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: var(--primary);
+    transition: all var(--transition-base);
+}
+
+/* ========================
+   HERO SECTION
+   ======================== */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 0 4rem;
+    position: relative;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+.gradient-text {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.hero-description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease 0.8s both;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-base);
+}
+
+.btn:hover svg {
+    transform: translateX(5px);
+}
+
+.btn-primary {
+    background: var(--gradient-1);
+    color: white;
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--surface);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    animation: fadeInUp 1s ease 1s both;
+}
+
+.stat-item {
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.hero-visual {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    animation: fadeInUp 1s ease 1.2s both;
+}
+
+.floating-card {
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    max-width: 400px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.plant-icon {
+    margin-bottom: 1.5rem;
+}
+
+.plant-icon svg {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+}
+
+.card-content p {
+    color: var(--text-secondary);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+.mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% { opacity: 1; top: 8px; }
+    100% { opacity: 0; top: 20px; }
+}
+
+.scroll-indicator span {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+/* ========================
+   STATS SECTION
+   ======================== */
+.stats-section {
+    padding: 6rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.section-desc {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.live-stat {
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.live-stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.live-stat:hover::before {
+    left: 100%;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+.stat-value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.stat-suffix {
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.stat-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 1rem 0;
+}
+
+.stat-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(107, 159, 76, 0.1);
+    border-radius: 20px;
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.stat-trend svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ========================
+   TIMELINE SECTION
+   ======================== */
+.timeline-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, rgba(45, 80, 22, 0.03) 0%, rgba(107, 159, 76, 0.03) 100%);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--primary), transparent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.timeline-item-reverse .timeline-content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.timeline-item-reverse .timeline-marker {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.timeline-marker {
+    grid-column: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marker-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 0 4px var(--background), 0 0 0 6px var(--primary);
+}
+
+.marker-pulse {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+.timeline-content {
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    grid-column: 3;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    grid-column: 1;
+    text-align: right;
+}
+
+.timeline-number {
+    position: absolute;
+    top: -1rem;
+    right: 2rem;
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--primary);
+    opacity: 0.1;
+}
+
+.timeline-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-icon svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.timeline-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.timeline-features li {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ========================
+   FEATURES SECTION
+   ======================== */
+.features-section {
+    padding: 6rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(107, 159, 76, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+}
+
+.feature-card:hover::after {
+    opacity: 1;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-base);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.feature-icon svg {
+    width: 35px;
+    height: 35px;
+    color: white;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.feature-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(107, 159, 76, 0.1);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ========================
+   TECH SECTION
+   ======================== */
+.tech-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, rgba(45, 80, 22, 0.03) 0%, rgba(107, 159, 76, 0.03) 100%);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.tech-card {
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.tech-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+}
+
+.tech-card:hover .tech-icon {
+    transform: rotateY(360deg);
+}
+
+.tech-icon svg {
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+.tech-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+}
+
+.tech-card p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.tech-showcase {
+    padding: 3rem;
+    border-radius: var(--border-radius-lg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.tech-orbit {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.orbit-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: rotate 20s linear infinite;
+}
+
+.orbit-ring:nth-child(1) {
+    width: 100%;
+    height: 100%;
+}
+
+.orbit-ring:nth-child(2) {
+    width: 70%;
+    height: 70%;
+}
+
+.orbit-ring:nth-child(3) {
+    width: 40%;
+    height: 40%;
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.orbit-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(107, 159, 76, 0.5);
+}
+
+.orbit-center svg {
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+.showcase-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.showcase-content p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.showcase-features {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.showcase-features li {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* ========================
+   CTA SECTION
+   ======================== */
+.cta-section {
+    padding: 6rem 0;
+}
+
+.cta-content {
+    padding: 4rem;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 2rem;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.pulse-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.cta-icon svg {
+    width: 50px;
+    height: 50px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content h2 {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.cta-btn {
+    padding: 1.25rem 3rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all var(--transition-base);
+}
+
+.cta-btn svg {
+    width: 24px;
+    height: 24px;
+    transition: transform var(--transition-base);
+}
+
+.cta-btn:hover svg {
+    transform: scale(1.2);
+}
+
+.cta-btn-whatsapp {
+    background: #25D366;
+    color: white;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+}
+
+.cta-btn-whatsapp:hover {
+    background: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+}
+
+.cta-btn-portfolio {
+    background: var(--gradient-1);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.cta-btn-portfolio:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cta-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.info-item svg {
+    width: 20px;
+    height: 20px;
+    color: var(--primary);
+}
+
+/* ========================
+   FOOTER
+   ======================== */
+.footer {
+    background: linear-gradient(135deg, rgba(45, 80, 22, 0.05) 0%, rgba(107, 159, 76, 0.05) 100%);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.footer-logo .logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-section p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: var(--surface);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    transition: all var(--transition-fast);
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.social-links svg {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(107, 159, 76, 0.2);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+}
+
+.footer-badges {
+    display: flex;
+    gap: 1rem;
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    background: rgba(107, 159, 76, 0.1);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ========================
+   ANIMATIONS
+   ======================== */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+[data-animate].animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================
+   RESPONSIVE DESIGN
+   ======================== */
+@media (max-width: 1024px) {
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        backdrop-filter: var(--blur-heavy);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1rem;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .timeline-line {
+        left: 2rem;
+    }
+
+    .timeline-item {
+        grid-template-columns: auto 1fr;
+        gap: 1.5rem;
+    }
+
+    .timeline-marker {
+        grid-column: 1;
+    }
+
+    .timeline-content,
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content,
+    .timeline-item-reverse .timeline-content {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .tech-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 6rem 0 3rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        justify-content: center;
+    }
+
+    .stats-grid,
+    .features-grid,
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .cta-content {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* ========================
+   UTILITY CLASSES
+   ======================== */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+/* ========================
+   PERFORMANCE OPTIMIZATIONS
+   ======================== */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    }
+    
+ </style> 
+
+    
+</head>
+<body class="theme-light">
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <canvas id="particles"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-card" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 5L45 15V35L25 45L5 35V15L25 5Z" stroke="currentColor" stroke-width="2" fill="url(#logoGradient)"/>
+                    <path d="M25 15L35 20V30L25 35L15 30V20L25 15Z" fill="currentColor" opacity="0.6"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="5" y1="5" x2="45" y2="45">
+                            <stop offset="0%" stop-color="#2D5016"/>
+                            <stop offset="100%" stop-color="#6B9F4C"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text" data-en="Pyramids" data-ar="بيراميدز">بيراميدز</span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                <li><a href="#about" class="nav-link" data-en="About" data-ar="من نحن">من نحن</a></li>
+                <li><a href="#timeline" class="nav-link" data-en="Process" data-ar="المراحل">المراحل</a></li>
+                <li><a href="#features" class="nav-link" data-en="Features" data-ar="المميزات">المميزات</a></li>
+                <li><a href="#tech" class="nav-link" data-en="Technology" data-ar="التقنيات">التقنيات</a></li>
+                <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل">تواصل</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                
+                <button class="lang-toggle" id="langToggle">
+                    <span class="lang-text">EN</span>
+                </button>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge glass-card" data-en="🌱 Sustainable Agriculture" data-ar="🌱 الزراعة المستدامة">
+                    🌱 الزراعة المستدامة
+                </div>
+                <h1 class="hero-title" data-en="Growing Tomorrow's Green Future" data-ar="نزرع مستقبل أخضر مستدام">
+                    نزرع مستقبل<br>
+                    <span class="gradient-text">أخضر مستدام</span>
+                </h1>
+                <p class="hero-description" 
+                   data-en="Leading provider of advanced agricultural fertilizers and sustainable green development solutions across Egypt and the Arab world"
+                   data-ar="الشركة الرائدة في توفير الأسمدة الزراعية المتطورة وحلول التنمية الخضرية المستدامة في مصر والعالم العربي">
+                    الشركة الرائدة في توفير الأسمدة الزراعية المتطورة وحلول التنمية الخضرية المستدامة في مصر والعالم العربي
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        <span data-en="Start Your Journey" data-ar="ابدأ رحلتك">ابدأ رحلتك</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <span data-en="Learn More" data-ar="اكتشف المزيد">اكتشف المزيد</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item glass-card">
+                        <div class="stat-number" data-count="500">0</div>
+                        <div class="stat-label" data-en="Happy Clients" data-ar="عميل راضٍ">عميل راضٍ</div>
+                    </div>
+                    <div class="stat-item glass-card">
+                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-label" data-en="Years Experience" data-ar="سنة خبرة">سنة خبرة</div>
+                    </div>
+                    <div class="stat-item glass-card">
+                        <div class="stat-number" data-count="98">0</div>
+                        <div class="stat-label" data-en="Success Rate %" data-ar="نسبة النجاح %">نسبة النجاح %</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="floating-card glass-card">
+                    <div class="plant-icon">
+                        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M100 180C100 180 70 140 70 100C70 60 100 20 100 20C100 20 130 60 130 100C130 140 100 180 100 180Z" 
+                                  fill="url(#plantGradient1)" opacity="0.8"/>
+                            <path d="M100 180C100 180 130 140 130 100C130 60 100 20 100 20" 
+                                  fill="url(#plantGradient2)" opacity="0.6"/>
+                            <ellipse cx="100" cy="185" rx="30" ry="8" fill="url(#soilGradient)"/>
+                            <defs>
+                                <linearGradient id="plantGradient1" x1="70" y1="20" x2="130" y2="180">
+                                    <stop offset="0%" stop-color="#6B9F4C"/>
+                                    <stop offset="100%" stop-color="#2D5016"/>
+                                </linearGradient>
+                                <linearGradient id="plantGradient2" x1="100" y1="20" x2="130" y2="180">
+                                    <stop offset="0%" stop-color="#8BC34A"/>
+                                    <stop offset="100%" stop-color="#4A7729"/>
+                                </linearGradient>
+                                <radialGradient id="soilGradient" cx="100" cy="185">
+                                    <stop offset="0%" stop-color="#5D4037"/>
+                                    <stop offset="100%" stop-color="#3E2723"/>
+                                </radialGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-en="Smart Agriculture" data-ar="الزراعة الذكية">الزراعة الذكية</h3>
+                        <p data-en="Advanced solutions for modern farming" data-ar="حلول متطورة للزراعة الحديثة">
+                            حلول متطورة للزراعة الحديثة
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span data-en="Scroll" data-ar="تصفح">تصفح</span>
+        </div>
+    </section>
+
+    <!-- About Stats Section -->
+    <section id="about" class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge glass-card" data-en="Why Choose Us" data-ar="لماذا نحن">لماذا نحن</span>
+                <h2 class="section-title" data-en="Excellence in Every Grain" data-ar="التميز في كل حبة">
+                    التميز في <span class="gradient-text">كل حبة</span>
+                </h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="live-stat glass-card" data-animate>
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value" data-count="500">0</div>
+                    <div class="stat-suffix">+</div>
+                    <p class="stat-desc" data-en="Satisfied Clients" data-ar="عميل راضٍ">عميل راضٍ</p>
+                    <div class="stat-trend">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        </svg>
+                        <span>+25%</span>
+                    </div>
+                </div>
+
+                <div class="live-stat glass-card" data-animate style="animation-delay: 0.1s">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18"/>
+                            <path d="M9 21V9"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value" data-count="10000">0</div>
+                    <div class="stat-suffix">+</div>
+                    <p class="stat-desc" data-en="Tons Distributed" data-ar="طن تم توزيعه">طن تم توزيعه</p>
+                    <div class="stat-trend">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        </svg>
+                        <span>+40%</span>
+                    </div>
+                </div>
+
+                <div class="live-stat glass-card" data-animate style="animation-delay: 0.2s">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value" data-count="50">0</div>
+                    <div class="stat-suffix">+</div>
+                    <p class="stat-desc" data-en="Product Types" data-ar="نوع منتج">نوع منتج</p>
+                    <div class="stat-trend">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        </svg>
+                        <span>+15%</span>
+                    </div>
+                </div>
+
+                <div class="live-stat glass-card" data-animate style="animation-delay: 0.3s">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value" data-count="98">0</div>
+                    <div class="stat-suffix">%</div>
+                    <p class="stat-desc" data-en="Quality Guarantee" data-ar="ضمان الجودة">ضمان الجودة</p>
+                    <div class="stat-trend">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        </svg>
+                        <span>+5%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge glass-card" data-en="Our Process" data-ar="سير العمل">سير العمل</span>
+                <h2 class="section-title" data-en="Four Steps to Success" data-ar="أربع خطوات للنجاح">
+                    أربع خطوات <span class="gradient-text">للنجاح</span>
+                </h2>
+                <p class="section-desc" data-en="From consultation to harvest, we guide you every step" data-ar="من الاستشارة حتى الحصاد، نرافقك في كل خطوة">
+                    من الاستشارة حتى الحصاد، نرافقك في كل خطوة
+                </p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item" data-animate>
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-number">01</div>
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                <path d="M8 10h.01M12 10h.01M16 10h.01"/>
+                            </svg>
+                        </div>
+                        <h3 data-en="Consultation & Analysis" data-ar="الاستشارة والتحليل">الاستشارة والتحليل</h3>
+                        <p data-en="We analyze your soil, crops, and needs to provide tailored fertilizer solutions"
+                           data-ar="نحلل التربة والمحاصيل واحتياجاتك لتقديم حلول سمادية مخصصة">
+                            نحلل التربة والمحاصيل واحتياجاتك لتقديم حلول سمادية مخصصة
+                        </p>
+                        <ul class="timeline-features">
+                            <li data-en="Soil Testing" data-ar="فحص التربة">✓ فحص التربة</li>
+                            <li data-en="Crop Assessment" data-ar="تقييم المحصول">✓ تقييم المحصول</li>
+                            <li data-en="Custom Plan" data-ar="خطة مخصصة">✓ خطة مخصصة</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-item-reverse" data-animate>
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-number">02</div>
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="12" y1="18" x2="12" y2="12"/>
+                                <line x1="9" y1="15" x2="15" y2="15"/>
+                            </svg>
+                        </div>
+                        <h3 data-en="Product Selection" data-ar="اختيار المنتجات">اختيار المنتجات</h3>
+                        <p data-en="Select from our premium range of organic and chemical fertilizers"
+                           data-ar="اختر من مجموعتنا المتميزة من الأسمدة العضوية والكيميائية">
+                            اختر من مجموعتنا المتميزة من الأسمدة العضوية والكيميائية
+                        </p>
+                        <ul class="timeline-features">
+                            <li data-en="Organic Options" data-ar="خيارات عضوية">✓ خيارات عضوية</li>
+                            <li data-en="Premium Quality" data-ar="جودة فائقة">✓ جودة فائقة</li>
+                            <li data-en="Best Pricing" data-ar="أفضل الأسعار">✓ أفضل الأسعار</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-animate>
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-number">03</div>
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"/>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                                <circle cx="5.5" cy="18.5" r="2.5"/>
+                                <circle cx="18.5" cy="18.5" r="2.5"/>
+                            </svg>
+                        </div>
+                        <h3 data-en="Delivery & Application" data-ar="التوصيل والتطبيق">التوصيل والتطبيق</h3>
+                        <p data-en="Fast delivery with expert guidance on proper application methods"
+                           data-ar="توصيل سريع مع إرشادات خبراء حول طرق الاستخدام الصحيحة">
+                            توصيل سريع مع إرشادات خبراء حول طرق الاستخدام الصحيحة
+                        </p>
+                        <ul class="timeline-features">
+                            <li data-en="Fast Shipping" data-ar="شحن سريع">✓ شحن سريع</li>
+                            <li data-en="Expert Training" data-ar="تدريب احترافي">✓ تدريب احترافي</li>
+                            <li data-en="Full Support" data-ar="دعم كامل">✓ دعم كامل</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-item-reverse" data-animate>
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-number">04</div>
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3 data-en="Follow-up & Results" data-ar="المتابعة والنتائج">المتابعة والنتائج</h3>
+                        <p data-en="Continuous monitoring and support to ensure optimal crop growth"
+                           data-ar="متابعة ودعم مستمر لضمان نمو مثالي للمحاصيل">
+                            متابعة ودعم مستمر لضمان نمو مثالي للمحاصيل
+                        </p>
+                        <ul class="timeline-features">
+                            <li data-en="Regular Checkups" data-ar="فحوصات دورية">✓ فحوصات دورية</li>
+                            <li data-en="Progress Reports" data-ar="تقارير تقدم">✓ تقارير تقدم</li>
+                            <li data-en="Guaranteed Results" data-ar="نتائج مضمونة">✓ نتائج مضمونة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge glass-card" data-en="What We Offer" data-ar="ما نقدمه">ما نقدمه</span>
+                <h2 class="section-title" data-en="Premium Solutions" data-ar="حلول متميزة">
+                    حلول <span class="gradient-text">متميزة</span>
+                </h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass-card" data-animate>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Fast Response" data-ar="استجابة سريعة">استجابة سريعة</h3>
+                    <p data-en="24/7 customer support with instant notifications" data-ar="دعم عملاء على مدار الساعة مع إشعارات فورية">
+                        دعم عملاء على مدار الساعة مع إشعارات فورية
+                    </p>
+                    <div class="feature-badge" data-en="24/7 Support" data-ar="دعم 24/7">دعم 24/7</div>
+                </div>
+
+                <div class="feature-card glass-card" data-animate style="animation-delay: 0.1s">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Premium Quality" data-ar="جودة فائقة">جودة فائقة</h3>
+                    <p data-en="ISO certified products with 98% quality guarantee" data-ar="منتجات معتمدة ISO مع ضمان جودة 98%">
+                        منتجات معتمدة ISO مع ضمان جودة 98%
+                    </p>
+                    <div class="feature-badge" data-en="ISO Certified" data-ar="معتمد ISO">معتمد ISO</div>
+                </div>
+
+                <div class="feature-card glass-card" data-animate style="animation-delay: 0.2s">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Smart Logistics" data-ar="لوجستيات ذكية">لوجستيات ذكية</h3>
+                    <p data-en="AI-powered delivery tracking and automated routing" data-ar="تتبع التوصيل بالذكاء الاصطناعي والتوجيه الآلي">
+                        تتبع التوصيل بالذكاء الاصطناعي والتوجيه الآلي
+                    </p>
+                    <div class="feature-badge" data-en="AI Powered" data-ar="ذكاء اصطناعي">ذكاء اصطناعي</div>
+                </div>
+
+                <div class="feature-card glass-card" data-animate style="animation-delay: 0.3s">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Eco-Friendly" data-ar="صديق للبيئة">صديق للبيئة</h3>
+                    <p data-en="Sustainable practices with organic alternatives" data-ar="ممارسات مستدامة مع بدائل عضوية">
+                        ممارسات مستدامة مع بدائل عضوية
+                    </p>
+                    <div class="feature-badge" data-en="100% Organic" data-ar="عضوي 100%">عضوي 100%</div>
+                </div>
+
+                <div class="feature-card glass-card" data-animate style="animation-delay: 0.4s">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Expert Team" data-ar="فريق خبراء">فريق خبراء</h3>
+                    <p data-en="Agricultural specialists with 15+ years experience" data-ar="متخصصون زراعيون بخبرة تزيد عن 15 عامًا">
+                        متخصصون زراعيون بخبرة تزيد عن 15 عامًا
+                    </p>
+                    <div class="feature-badge" data-en="15+ Years" data-ar="15+ سنة">15+ سنة</div>
+                </div>
+
+                <div class="feature-card glass-card" data-animate style="animation-delay: 0.5s">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Data Analytics" data-ar="تحليل البيانات">تحليل البيانات</h3>
+                    <p data-en="Real-time crop monitoring and decision support" data-ar="مراقبة المحاصيل في الوقت الفعلي ودعم القرارات">
+                        مراقبة المحاصيل في الوقت الفعلي ودعم القرارات
+                    </p>
+                    <div class="feature-badge" data-en="Live Monitoring" data-ar="مراقبة مباشرة">مراقبة مباشرة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech" class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge glass-card" data-en="Innovation" data-ar="الابتكار">الابتكار</span>
+                <h2 class="section-title" data-en="Advanced Technology" data-ar="تقنيات متقدمة">
+                    تقنيات <span class="gradient-text">متقدمة</span>
+                </h2>
+                <p class="section-desc" data-en="We leverage cutting-edge technology for sustainable agriculture" data-ar="نستخدم أحدث التقنيات للزراعة المستدامة">
+                    نستخدم أحدث التقنيات للزراعة المستدامة
+                </p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card glass-card" data-animate>
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l4.2 4.2M23 12h-6m-6 0H1m18.2 5.2l-4.2-4.2m0-6l4.2-4.2"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="IoT Sensors" data-ar="أجهزة استشعار IoT">أجهزة استشعار IoT</h3>
+                    <p data-en="Smart sensors for soil and crop monitoring" data-ar="أجهزة استشعار ذكية لمراقبة التربة والمحاصيل">
+                        أجهزة استشعار ذكية لمراقبة التربة والمحاصيل
+                    </p>
+                </div>
+
+                <div class="tech-card glass-card" data-animate style="animation-delay: 0.1s">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
+                            <polyline points="7.5 19.79 7.5 14.6 3 12"/>
+                            <polyline points="21 12 16.5 14.6 16.5 19.79"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="AI Analytics" data-ar="تحليلات الذكاء الاصطناعي">تحليلات AI</h3>
+                    <p data-en="Machine learning for yield prediction" data-ar="التعلم الآلي للتنبؤ بالإنتاج">
+                        التعلم الآلي للتنبؤ بالإنتاج
+                    </p>
+                </div>
+
+                <div class="tech-card glass-card" data-animate style="animation-delay: 0.2s">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+                            <line x1="16" y1="8" x2="2" y2="22"/>
+                            <line x1="17.5" y1="15" x2="9" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Drone Technology" data-ar="تقنية الطائرات">تقنية الطائرات</h3>
+                    <p data-en="Aerial surveying and precision spraying" data-ar="المسح الجوي والرش الدقيق">
+                        المسح الجوي والرش الدقيق
+                    </p>
+                </div>
+
+                <div class="tech-card glass-card" data-animate style="animation-delay: 0.3s">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Mobile App" data-ar="تطبيق موبايل">تطبيق موبايل</h3>
+                    <p data-en="On-the-go farm management system" data-ar="نظام إدارة المزرعة المتنقل">
+                        نظام إدارة المزرعة المتنقل
+                    </p>
+                </div>
+            </div>
+
+            <div class="tech-showcase glass-card" data-animate>
+                <div class="showcase-visual">
+                    <div class="tech-orbit">
+                        <div class="orbit-ring"></div>
+                        <div class="orbit-ring" style="animation-delay: -2s"></div>
+                        <div class="orbit-ring" style="animation-delay: -4s"></div>
+                        <div class="orbit-center">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h3 data-en="Integrated Platform" data-ar="منصة متكاملة">منصة متكاملة</h3>
+                    <p data-en="All-in-one solution connecting farmers, suppliers, and experts in real-time"
+                       data-ar="حل متكامل يربط المزارعين والموردين والخبراء في الوقت الفعلي">
+                        حل متكامل يربط المزارعين والموردين والخبراء في الوقت الفعلي
+                    </p>
+                    <ul class="showcase-features">
+                        <li data-en="Real-time Updates" data-ar="تحديثات فورية">✓ تحديثات فورية</li>
+                        <li data-en="Smart Notifications" data-ar="إشعارات ذكية">✓ إشعارات ذكية</li>
+                        <li data-en="Cloud Storage" data-ar="تخزين سحابي">✓ تخزين سحابي</li>
+                        <li data-en="Data Security" data-ar="أمان البيانات">✓ أمان البيانات</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-content glass-card" data-animate>
+                <div class="cta-icon">
+                    <div class="pulse-circle"></div>
+                    <div class="pulse-circle" style="animation-delay: 0.5s"></div>
+                    <div class="pulse-circle" style="animation-delay: 1s"></div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
+                <h2 data-en="Ready to Grow Your Success?" data-ar="جاهز لتنمية نجاحك؟">
+                    جاهز لتنمية <span class="gradient-text">نجاحك</span>؟
+                </h2>
+                <p data-en="Connect with our team today and start your journey towards sustainable agriculture"
+                   data-ar="تواصل مع فريقنا اليوم وابدأ رحلتك نحو الزراعة المستدامة">
+                    تواصل مع فريقنا اليوم وابدأ رحلتك نحو الزراعة المستدامة
+                </p>
+
+                <div class="cta-actions">
+                    <a href="https://wa.me/201113903070" target="_blank" class="cta-btn cta-btn-whatsapp">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        <span data-en="WhatsApp" data-ar="واتساب">واتساب</span>
+                    </a>
+
+                    <a href="https://moh222salah.github.io/cv" target="_blank" class="cta-btn cta-btn-portfolio">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span data-en="Our Portfolio" data-ar="معرض أعمالنا">معرض أعمالنا</span>
+                    </a>
+                </div>
+
+                <div class="cta-info">
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                        <span data-en="Cairo, Egypt" data-ar="القاهرة، مصر">القاهرة، مصر</span>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span>info@pyramids-agri.com</span>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <span data-en="Mon - Sat: 8AM - 6PM" data-ar="الإثنين - السبت: 8ص - 6م">الإثنين - السبت: 8ص - 6م</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 5L45 15V35L25 45L5 35V15L25 5Z" stroke="currentColor" stroke-width="2" fill="url(#logoGradient2)"/>
+                            <path d="M25 15L35 20V30L25 35L15 30V20L25 15Z" fill="currentColor" opacity="0.6"/>
+                            <defs>
+                                <linearGradient id="logoGradient2" x1="5" y1="5" x2="45" y2="45">
+                                    <stop offset="0%" stop-color="#2D5016"/>
+                                    <stop offset="100%" stop-color="#6B9F4C"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span data-en="Pyramids" data-ar="بيراميدز">بيراميدز</span>
+                    </div>
+                    <p data-en="Your trusted partner in sustainable agricultural development" data-ar="شريكك الموثوق في التنمية الزراعية المستدامة">
+                        شريكك الموثوق في التنمية الزراعية المستدامة
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                        <li><a href="#about" data-en="About" data-ar="من نحن">من نحن</a></li>
+                        <li><a href="#timeline" data-en="Process" data-ar="المراحل">المراحل</a></li>
+                        <li><a href="#features" data-en="Features" data-ar="المميزات">المميزات</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-en="Services" data-ar="الخدمات">الخدمات</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-en="Organic Fertilizers" data-ar="أسمدة عضوية">أسمدة عضوية</a></li>
+                        <li><a href="#" data-en="Soil Testing" data-ar="فحص التربة">فحص التربة</a></li>
+                        <li><a href="#" data-en="Consultation" data-ar="استشارات">استشارات</a></li>
+                        <li><a href="#" data-en="Training" data-ar="تدريب">تدريب</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-en="Connect" data-ar="تواصل معنا">تواصل معنا</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/201113903070" target="_blank" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-en="© 2024 Pyramids Agricultural Company. All rights reserved." data-ar="© 2024 شركة بيراميدز للأسمدة الزراعية. جميع الحقوق محفوظة.">
+                    © 2026 شركة بيراميدز للأسمدة الزراعية. جميع الحقوق محفوظة.
+                </p>
+                <div class="footer-badges">
+                    <span class="badge" data-en="ISO Certified" data-ar="معتمد ISO">معتمد ISO</span>
+                    <span class="badge" data-en="Eco-Friendly" data-ar="صديق للبيئة">صديق للبيئة</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        // ========================================
+// PYRAMIDS AGRICULTURAL COMPANY
+// Advanced Interactive Script
+// ========================================
+
+// ========================================
+// CONFIGURATION & CONSTANTS
+// ========================================
+const CONFIG = {
+    animationDuration: 300,
+    scrollThreshold: 100,
+    counterSpeed: 2000,
+    particleCount: 50,
+    defaultLang: 'ar'
+};
+
+// ========================================
+// LANGUAGE DETECTION & MANAGEMENT
+// ========================================
+class LanguageManager {
+    constructor() {
+        this.currentLang = this.detectLanguage();
+        this.translations = {
+            ar: {},
+            en: {}
+        };
+    }
+
+    detectLanguage() {
+        // Check localStorage first
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang) return savedLang;
+
+        // Detect browser/system language
+        const browserLang = navigator.language || navigator.userLanguage;
+        return browserLang.startsWith('ar') ? 'ar' : 'en';
+    }
+
+    getCurrentLanguage() {
+        return this.currentLang;
+    }
+
+    setLanguage(lang) {
+        this.currentLang = lang;
+        localStorage.setItem('preferredLanguage', lang);
+        
+        // Update HTML attributes
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        
+        // Update all translatable elements
+        this.updateTranslations();
+        
+        // Update language toggle button
+        this.updateLanguageButton();
+    }
+
+    updateTranslations() {
+        const elements = document.querySelectorAll('[data-en][data-ar]');
+        elements.forEach(element => {
+            const text = this.currentLang === 'ar' ? element.dataset.ar : element.dataset.en;
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = text;
+            } else {
+                element.textContent = text;
+            }
+        });
+    }
+
+    updateLanguageButton() {
+        const langToggle = document.getElementById('langToggle');
+        if (langToggle) {
+            const langText = langToggle.querySelector('.lang-text');
+            langText.textContent = this.currentLang === 'ar' ? 'EN' : 'ع';
+        }
+    }
+
+    toggleLanguage() {
+        this.setLanguage(this.currentLang === 'ar' ? 'en' : 'ar');
+    }
+}
+
+// ========================================
+// THEME MANAGEMENT
+// ========================================
+class ThemeManager {
+    constructor() {
+        this.currentTheme = this.detectTheme();
+        this.applyTheme(this.currentTheme);
+    }
+
+    detectTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) return savedTheme;
+        
+        // Default to light theme for agricultural company
+        return 'light';
+    }
+
+    applyTheme(theme) {
+        this.currentTheme = theme;
+        document.body.className = `theme-${theme}`;
+        localStorage.setItem('theme', theme);
+    }
+
+    toggleTheme() {
+        const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        this.applyTheme(newTheme);
+    }
+}
+
+// ========================================
+// NAVIGATION CONTROLLER
+// ========================================
+class NavigationController {
+    constructor() {
+        this.navbar = document.getElementById('navbar');
+        this.menuToggle = document.getElementById('menuToggle');
+        this.navMenu = document.getElementById('navMenu');
+        this.navLinks = document.querySelectorAll('.nav-link');
+        
+        this.init();
+    }
+
+    init() {
+        this.setupScrollBehavior();
+        this.setupMobileMenu();
+        this.setupSmoothScroll();
+    }
+
+    setupScrollBehavior() {
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            // Add scrolled class for backdrop effect
+            if (currentScroll > CONFIG.scrollThreshold) {
+                this.navbar.classList.add('scrolled');
+            } else {
+                this.navbar.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    }
+
+    setupMobileMenu() {
+        if (this.menuToggle) {
+            this.menuToggle.addEventListener('click', () => {
+                this.menuToggle.classList.toggle('active');
+                this.navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking nav links
+            this.navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    this.menuToggle.classList.remove('active');
+                    this.navMenu.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!this.navbar.contains(e.target)) {
+                    this.menuToggle.classList.remove('active');
+                    this.navMenu.classList.remove('active');
+                }
+            });
+        }
+    }
+
+    setupSmoothScroll() {
+        this.navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const navHeight = this.navbar.offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+}
+
+// ========================================
+// ANIMATED COUNTER
+// ========================================
+class AnimatedCounter {
+    constructor(element, options = {}) {
+        this.element = element;
+        this.target = parseInt(element.dataset.count) || 0;
+        this.duration = options.duration || CONFIG.counterSpeed;
+        this.hasAnimated = false;
+    }
+
+    animate() {
+        if (this.hasAnimated) return;
+        this.hasAnimated = true;
+
+        const start = 0;
+        const increment = this.target / (this.duration / 16);
+        let current = start;
+
+        const updateCounter = () => {
+            current += increment;
+            if (current < this.target) {
+                this.element.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                this.element.textContent = this.target;
+            }
+        };
+
+        updateCounter();
+    }
+}
+
+// ========================================
+// INTERSECTION OBSERVER FOR ANIMATIONS
+// ========================================
+class AnimationObserver {
+    constructor() {
+        this.observer = new IntersectionObserver(
+            (entries) => this.handleIntersection(entries),
+            {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            }
+        );
+
+        this.counters = [];
+        this.init();
+    }
+
+    init() {
+        // Observe animated elements
+        const animatedElements = document.querySelectorAll('[data-animate]');
+        animatedElements.forEach(element => this.observer.observe(element));
+
+        // Setup counters
+        const counterElements = document.querySelectorAll('[data-count]');
+        counterElements.forEach(element => {
+            const counter = new AnimatedCounter(element);
+            this.counters.push({ element, counter });
+            this.observer.observe(element);
+        });
+    }
+
+    handleIntersection(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Animate element
+                if (entry.target.hasAttribute('data-animate')) {
+                    entry.target.classList.add('animate-in');
+                }
+
+                // Animate counter
+                const counterData = this.counters.find(c => c.element === entry.target);
+                if (counterData) {
+                    counterData.counter.animate();
+                }
+            }
+        });
+    }
+}
+
+// ========================================
+// PARTICLE BACKGROUND
+// ========================================
+class ParticleBackground {
+    constructor(canvasId) {
+        this.canvas = document.getElementById(canvasId);
+        if (!this.canvas) return;
+
+        this.ctx = this.canvas.getContext('2d');
+        this.particles = [];
+        this.particleCount = CONFIG.particleCount;
+        
+        this.init();
+    }
+
+    init() {
+        this.resize();
+        this.createParticles();
+        this.animate();
+
+        window.addEventListener('resize', () => this.resize());
+    }
+
+    resize() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
+
+    createParticles() {
+        this.particles = [];
+        for (let i = 0; i < this.particleCount; i++) {
+            this.particles.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                size: Math.random() * 3 + 1,
+                speedX: (Math.random() - 0.5) * 0.5,
+                speedY: (Math.random() - 0.5) * 0.5,
+                opacity: Math.random() * 0.5 + 0.2
+            });
+        }
+    }
+
+    animate() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        // Get current theme
+        const isDark = document.body.classList.contains('theme-dark');
+        const particleColor = isDark ? '139, 195, 74' : '45, 80, 22';
+
+        this.particles.forEach(particle => {
+            // Update position
+            particle.x += particle.speedX;
+            particle.y += particle.speedY;
+
+            // Wrap around edges
+            if (particle.x < 0) particle.x = this.canvas.width;
+            if (particle.x > this.canvas.width) particle.x = 0;
+            if (particle.y < 0) particle.y = this.canvas.height;
+            if (particle.y > this.canvas.height) particle.y = 0;
+
+            // Draw particle
+            this.ctx.beginPath();
+            this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            this.ctx.fillStyle = `rgba(${particleColor}, ${particle.opacity})`;
+            this.ctx.fill();
+        });
+
+        // Draw connections
+        this.particles.forEach((particle, i) => {
+            for (let j = i + 1; j < this.particles.length; j++) {
+                const dx = particle.x - this.particles[j].x;
+                const dy = particle.y - this.particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 150) {
+                    this.ctx.beginPath();
+                    this.ctx.strokeStyle = `rgba(${particleColor}, ${0.15 * (1 - distance / 150)})`;
+                    this.ctx.lineWidth = 1;
+                    this.ctx.moveTo(particle.x, particle.y);
+                    this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                    this.ctx.stroke();
+                }
+            }
+        });
+
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+// ========================================
+// FORM HANDLER
+// ========================================
+class FormHandler {
+    constructor() {
+        this.forms = document.querySelectorAll('form');
+        this.init();
+    }
+
+    init() {
+        this.forms.forEach(form => {
+            form.addEventListener('submit', (e) => this.handleSubmit(e, form));
+        });
+    }
+
+    async handleSubmit(e, form) {
+        e.preventDefault();
+        
+        // Add loading state
+        const submitBtn = form.querySelector('[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'جاري الإرسال...';
+
+        // Simulate form submission
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        // Show success message
+        this.showNotification('تم إرسال رسالتك بنجاح!', 'success');
+        
+        // Reset form
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+    }
+
+    showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: rgba(107, 159, 76, 0.95);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+        `;
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+}
+
+// ========================================
+// PERFORMANCE MONITOR
+// ========================================
+class PerformanceMonitor {
+    constructor() {
+        this.metrics = {
+            fps: 0,
+            loadTime: 0
+        };
+        
+        if (window.performance) {
+            this.measureLoadTime();
+            this.measureFPS();
+        }
+    }
+
+    measureLoadTime() {
+        window.addEventListener('load', () => {
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            this.metrics.loadTime = loadTime;
+            console.log(`Page load time: ${loadTime}ms`);
+        });
+    }
+
+    measureFPS() {
+        let lastTime = performance.now();
+        let frames = 0;
+
+        const calculateFPS = () => {
+            const currentTime = performance.now();
+            frames++;
+
+            if (currentTime >= lastTime + 1000) {
+                this.metrics.fps = Math.round((frames * 1000) / (currentTime - lastTime));
+                frames = 0;
+                lastTime = currentTime;
+            }
+
+            requestAnimationFrame(calculateFPS);
+        };
+
+        calculateFPS();
+    }
+
+    getMetrics() {
+        return this.metrics;
+    }
+}
+
+// ========================================
+// ACCESSIBILITY ENHANCEMENTS
+// ========================================
+class AccessibilityManager {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        // Add keyboard navigation
+        this.setupKeyboardNavigation();
+        
+        // Add focus visible for keyboard users
+        this.setupFocusVisible();
+        
+        // Add skip to content link
+        this.addSkipLink();
+    }
+
+    setupKeyboardNavigation() {
+        document.addEventListener('keydown', (e) => {
+            // ESC key closes mobile menu
+            if (e.key === 'Escape') {
+                const menuToggle = document.getElementById('menuToggle');
+                const navMenu = document.getElementById('navMenu');
+                if (menuToggle && navMenu) {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            }
+        });
+    }
+
+    setupFocusVisible() {
+        let isUsingKeyboard = false;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                isUsingKeyboard = true;
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            isUsingKeyboard = false;
+            document.body.classList.remove('keyboard-nav');
+        });
+    }
+
+    addSkipLink() {
+        const skipLink = document.createElement('a');
+        skipLink.href = '#main-content';
+        skipLink.className = 'skip-link';
+        skipLink.textContent = 'تخطى إلى المحتوى الرئيسي';
+        skipLink.style.cssText = `
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            z-index: 10000;
+        `;
+        skipLink.addEventListener('focus', () => {
+            skipLink.style.top = '0';
+        });
+        skipLink.addEventListener('blur', () => {
+            skipLink.style.top = '-40px';
+        });
+        
+        document.body.insertBefore(skipLink, document.body.firstChild);
+    }
+}
+
+// ========================================
+// LAZY LOADING IMAGES
+// ========================================
+class LazyLoader {
+    constructor() {
+        this.images = document.querySelectorAll('img[data-src]');
+        this.init();
+    }
+
+    init() {
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            this.images.forEach(img => imageObserver.observe(img));
+        } else {
+            // Fallback for older browsers
+            this.images.forEach(img => {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+            });
+        }
+    }
+}
+
+// ========================================
+// ANALYTICS (PLACEHOLDER)
+// ========================================
+class Analytics {
+    constructor() {
+        this.events = [];
+    }
+
+    trackPageView(page) {
+        console.log(`Page view: ${page}`);
+        this.events.push({ type: 'pageview', page, timestamp: Date.now() });
+    }
+
+    trackEvent(category, action, label) {
+        console.log(`Event: ${category} - ${action} - ${label}`);
+        this.events.push({ type: 'event', category, action, label, timestamp: Date.now() });
+    }
+
+    trackClick(element) {
+        const text = element.textContent || element.alt || 'Unknown';
+        this.trackEvent('Click', element.tagName, text);
+    }
+}
+
+// ========================================
+// INITIALIZATION
+// ========================================
+class App {
+    constructor() {
+        this.languageManager = new LanguageManager();
+        this.themeManager = new ThemeManager();
+        this.navigationController = new NavigationController();
+        this.animationObserver = new AnimationObserver();
+        this.particleBackground = new ParticleBackground('particles');
+        this.formHandler = new FormHandler();
+        this.performanceMonitor = new PerformanceMonitor();
+        this.accessibilityManager = new AccessibilityManager();
+        this.lazyLoader = new LazyLoader();
+        this.analytics = new Analytics();
+        
+        this.init();
+    }
+
+    init() {
+        // Set initial language
+        this.languageManager.setLanguage(this.languageManager.getCurrentLanguage());
+
+        // Setup event listeners
+        this.setupEventListeners();
+
+        // Track initial page view
+        this.analytics.trackPageView(window.location.pathname);
+
+        // Add loaded class for animations
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    }
+
+    setupEventListeners() {
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                this.themeManager.toggleTheme();
+                this.analytics.trackEvent('UI', 'Theme Toggle', this.themeManager.currentTheme);
+            });
+        }
+
+        // Language toggle
+        const langToggle = document.getElementById('langToggle');
+        if (langToggle) {
+            langToggle.addEventListener('click', () => {
+                this.languageManager.toggleLanguage();
+                this.analytics.trackEvent('UI', 'Language Toggle', this.languageManager.currentLang);
+            });
+        }
+
+        // Track CTA clicks
+        const ctaButtons = document.querySelectorAll('.cta-btn, .btn-primary');
+        ctaButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                this.analytics.trackClick(e.target);
+            });
+        });
+
+        // Add smooth scroll for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+}
+
+// ========================================
+// START APPLICATION
+// ========================================
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        window.app = new App();
+    });
+} else {
+    window.app = new App();
+}
+
+// ========================================
+// EXPORT FOR DEBUGGING
+// ========================================
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        LanguageManager,
+        ThemeManager,
+        NavigationController,
+        AnimatedCounter,
+        AnimationObserver,
+        ParticleBackground,
+        FormHandler,
+        PerformanceMonitor,
+        AccessibilityManager,
+        LazyLoader,
+        Analytics,
+        App
+    };
+}
+
+// ========================================
+// CONSOLE BRANDING
+// ========================================
+console.log('%c🌱 Pyramids Agricultural Company', 'color: #6B9F4C; font-size: 24px; font-weight: bold;');
+console.log('%cBuilt with precision and care', 'color: #2D5016; font-size: 14px;');
+console.log('%cVersion 1.0.0', 'color: #8BC34A; font-size: 12px;');
+
+
+        
+    </script>
+</body>
+</html>

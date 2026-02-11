@@ -1,731 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pyramids - Your Partner in Sustainable Agricultural Development | شريكك في التنمية الزراعية المستدامة">
-    <title>Pyramids Agricultural Company | شركة بيراميدز للأسمدة الزراعية</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body class="theme-light">
-    <!-- Animated Background -->
-    <div class="background-animation">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-        <canvas id="particles"></canvas>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="navbar glass-card" id="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <svg class="logo-icon" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25 5L45 15V35L25 45L5 35V15L25 5Z" stroke="currentColor" stroke-width="2" fill="url(#logoGradient)"/>
-                    <path d="M25 15L35 20V30L25 35L15 30V20L25 15Z" fill="currentColor" opacity="0.6"/>
-                    <defs>
-                        <linearGradient id="logoGradient" x1="5" y1="5" x2="45" y2="45">
-                            <stop offset="0%" stop-color="#2D5016"/>
-                            <stop offset="100%" stop-color="#6B9F4C"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <span class="logo-text" data-en="Pyramids" data-ar="بيراميدز">بيراميدز</span>
-            </div>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
-                <li><a href="#about" class="nav-link" data-en="About" data-ar="من نحن">من نحن</a></li>
-                <li><a href="#timeline" class="nav-link" data-en="Process" data-ar="المراحل">المراحل</a></li>
-                <li><a href="#features" class="nav-link" data-en="Features" data-ar="المميزات">المميزات</a></li>
-                <li><a href="#tech" class="nav-link" data-en="Technology" data-ar="التقنيات">التقنيات</a></li>
-                <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل">تواصل</a></li>
-            </ul>
-
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"/>
-                        <line x1="12" y1="1" x2="12" y2="3"/>
-                        <line x1="12" y1="21" x2="12" y2="23"/>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                        <line x1="1" y1="12" x2="3" y2="12"/>
-                        <line x1="21" y1="12" x2="23" y2="12"/>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                    </svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                    </svg>
-                </button>
-                
-                <button class="lang-toggle" id="langToggle">
-                    <span class="lang-text">EN</span>
-                </button>
-
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge glass-card" data-en="🌱 Sustainable Agriculture" data-ar="🌱 الزراعة المستدامة">
-                    🌱 الزراعة المستدامة
-                </div>
-                <h1 class="hero-title" data-en="Growing Tomorrow's Green Future" data-ar="نزرع مستقبل أخضر مستدام">
-                    نزرع مستقبل<br>
-                    <span class="gradient-text">أخضر مستدام</span>
-                </h1>
-                <p class="hero-description" 
-                   data-en="Leading provider of advanced agricultural fertilizers and sustainable green development solutions across Egypt and the Arab world"
-                   data-ar="الشركة الرائدة في توفير الأسمدة الزراعية المتطورة وحلول التنمية الخضرية المستدامة في مصر والعالم العربي">
-                    الشركة الرائدة في توفير الأسمدة الزراعية المتطورة وحلول التنمية الخضرية المستدامة في مصر والعالم العربي
-                </p>
-                
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">
-                        <span data-en="Start Your Journey" data-ar="ابدأ رحلتك">ابدأ رحلتك</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <a href="#about" class="btn btn-secondary">
-                        <span data-en="Learn More" data-ar="اكتشف المزيد">اكتشف المزيد</span>
-                    </a>
-                </div>
-
-                <div class="hero-stats">
-                    <div class="stat-item glass-card">
-                        <div class="stat-number" data-count="500">0</div>
-                        <div class="stat-label" data-en="Happy Clients" data-ar="عميل راضٍ">عميل راضٍ</div>
-                    </div>
-                    <div class="stat-item glass-card">
-                        <div class="stat-number" data-count="15">0</div>
-                        <div class="stat-label" data-en="Years Experience" data-ar="سنة خبرة">سنة خبرة</div>
-                    </div>
-                    <div class="stat-item glass-card">
-                        <div class="stat-number" data-count="98">0</div>
-                        <div class="stat-label" data-en="Success Rate %" data-ar="نسبة النجاح %">نسبة النجاح %</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-visual">
-                <div class="floating-card glass-card">
-                    <div class="plant-icon">
-                        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M100 180C100 180 70 140 70 100C70 60 100 20 100 20C100 20 130 60 130 100C130 140 100 180 100 180Z" 
-                                  fill="url(#plantGradient1)" opacity="0.8"/>
-                            <path d="M100 180C100 180 130 140 130 100C130 60 100 20 100 20" 
-                                  fill="url(#plantGradient2)" opacity="0.6"/>
-                            <ellipse cx="100" cy="185" rx="30" ry="8" fill="url(#soilGradient)"/>
-                            <defs>
-                                <linearGradient id="plantGradient1" x1="70" y1="20" x2="130" y2="180">
-                                    <stop offset="0%" stop-color="#6B9F4C"/>
-                                    <stop offset="100%" stop-color="#2D5016"/>
-                                </linearGradient>
-                                <linearGradient id="plantGradient2" x1="100" y1="20" x2="130" y2="180">
-                                    <stop offset="0%" stop-color="#8BC34A"/>
-                                    <stop offset="100%" stop-color="#4A7729"/>
-                                </linearGradient>
-                                <radialGradient id="soilGradient" cx="100" cy="185">
-                                    <stop offset="0%" stop-color="#5D4037"/>
-                                    <stop offset="100%" stop-color="#3E2723"/>
-                                </radialGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div class="card-content">
-                        <h3 data-en="Smart Agriculture" data-ar="الزراعة الذكية">الزراعة الذكية</h3>
-                        <p data-en="Advanced solutions for modern farming" data-ar="حلول متطورة للزراعة الحديثة">
-                            حلول متطورة للزراعة الحديثة
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <span data-en="Scroll" data-ar="تصفح">تصفح</span>
-        </div>
-    </section>
-
-    <!-- About Stats Section -->
-    <section id="about" class="stats-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge glass-card" data-en="Why Choose Us" data-ar="لماذا نحن">لماذا نحن</span>
-                <h2 class="section-title" data-en="Excellence in Every Grain" data-ar="التميز في كل حبة">
-                    التميز في <span class="gradient-text">كل حبة</span>
-                </h2>
-            </div>
-
-            <div class="stats-grid">
-                <div class="live-stat glass-card" data-animate>
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                    </div>
-                    <div class="stat-value" data-count="500">0</div>
-                    <div class="stat-suffix">+</div>
-                    <p class="stat-desc" data-en="Satisfied Clients" data-ar="عميل راضٍ">عميل راضٍ</p>
-                    <div class="stat-trend">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                        </svg>
-                        <span>+25%</span>
-                    </div>
-                </div>
-
-                <div class="live-stat glass-card" data-animate style="animation-delay: 0.1s">
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <path d="M3 9h18"/>
-                            <path d="M9 21V9"/>
-                        </svg>
-                    </div>
-                    <div class="stat-value" data-count="10000">0</div>
-                    <div class="stat-suffix">+</div>
-                    <p class="stat-desc" data-en="Tons Distributed" data-ar="طن تم توزيعه">طن تم توزيعه</p>
-                    <div class="stat-trend">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                        </svg>
-                        <span>+40%</span>
-                    </div>
-                </div>
-
-                <div class="live-stat glass-card" data-animate style="animation-delay: 0.2s">
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <div class="stat-value" data-count="50">0</div>
-                    <div class="stat-suffix">+</div>
-                    <p class="stat-desc" data-en="Product Types" data-ar="نوع منتج">نوع منتج</p>
-                    <div class="stat-trend">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                        </svg>
-                        <span>+15%</span>
-                    </div>
-                </div>
-
-                <div class="live-stat glass-card" data-animate style="animation-delay: 0.3s">
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            <path d="M9 12l2 2 4-4"/>
-                        </svg>
-                    </div>
-                    <div class="stat-value" data-count="98">0</div>
-                    <div class="stat-suffix">%</div>
-                    <p class="stat-desc" data-en="Quality Guarantee" data-ar="ضمان الجودة">ضمان الجودة</p>
-                    <div class="stat-trend">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                        </svg>
-                        <span>+5%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section id="timeline" class="timeline-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge glass-card" data-en="Our Process" data-ar="سير العمل">سير العمل</span>
-                <h2 class="section-title" data-en="Four Steps to Success" data-ar="أربع خطوات للنجاح">
-                    أربع خطوات <span class="gradient-text">للنجاح</span>
-                </h2>
-                <p class="section-desc" data-en="From consultation to harvest, we guide you every step" data-ar="من الاستشارة حتى الحصاد، نرافقك في كل خطوة">
-                    من الاستشارة حتى الحصاد، نرافقك في كل خطوة
-                </p>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-line"></div>
-                
-                <div class="timeline-item" data-animate>
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                        <div class="marker-pulse"></div>
-                    </div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-number">01</div>
-                        <div class="timeline-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                                <path d="M8 10h.01M12 10h.01M16 10h.01"/>
-                            </svg>
-                        </div>
-                        <h3 data-en="Consultation & Analysis" data-ar="الاستشارة والتحليل">الاستشارة والتحليل</h3>
-                        <p data-en="We analyze your soil, crops, and needs to provide tailored fertilizer solutions"
-                           data-ar="نحلل التربة والمحاصيل واحتياجاتك لتقديم حلول سمادية مخصصة">
-                            نحلل التربة والمحاصيل واحتياجاتك لتقديم حلول سمادية مخصصة
-                        </p>
-                        <ul class="timeline-features">
-                            <li data-en="Soil Testing" data-ar="فحص التربة">✓ فحص التربة</li>
-                            <li data-en="Crop Assessment" data-ar="تقييم المحصول">✓ تقييم المحصول</li>
-                            <li data-en="Custom Plan" data-ar="خطة مخصصة">✓ خطة مخصصة</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item timeline-item-reverse" data-animate>
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                        <div class="marker-pulse"></div>
-                    </div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-number">02</div>
-                        <div class="timeline-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="12" y1="18" x2="12" y2="12"/>
-                                <line x1="9" y1="15" x2="15" y2="15"/>
-                            </svg>
-                        </div>
-                        <h3 data-en="Product Selection" data-ar="اختيار المنتجات">اختيار المنتجات</h3>
-                        <p data-en="Select from our premium range of organic and chemical fertilizers"
-                           data-ar="اختر من مجموعتنا المتميزة من الأسمدة العضوية والكيميائية">
-                            اختر من مجموعتنا المتميزة من الأسمدة العضوية والكيميائية
-                        </p>
-                        <ul class="timeline-features">
-                            <li data-en="Organic Options" data-ar="خيارات عضوية">✓ خيارات عضوية</li>
-                            <li data-en="Premium Quality" data-ar="جودة فائقة">✓ جودة فائقة</li>
-                            <li data-en="Best Pricing" data-ar="أفضل الأسعار">✓ أفضل الأسعار</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-animate>
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                        <div class="marker-pulse"></div>
-                    </div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-number">03</div>
-                        <div class="timeline-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="1" y="3" width="15" height="13"/>
-                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                                <circle cx="5.5" cy="18.5" r="2.5"/>
-                                <circle cx="18.5" cy="18.5" r="2.5"/>
-                            </svg>
-                        </div>
-                        <h3 data-en="Delivery & Application" data-ar="التوصيل والتطبيق">التوصيل والتطبيق</h3>
-                        <p data-en="Fast delivery with expert guidance on proper application methods"
-                           data-ar="توصيل سريع مع إرشادات خبراء حول طرق الاستخدام الصحيحة">
-                            توصيل سريع مع إرشادات خبراء حول طرق الاستخدام الصحيحة
-                        </p>
-                        <ul class="timeline-features">
-                            <li data-en="Fast Shipping" data-ar="شحن سريع">✓ شحن سريع</li>
-                            <li data-en="Expert Training" data-ar="تدريب احترافي">✓ تدريب احترافي</li>
-                            <li data-en="Full Support" data-ar="دعم كامل">✓ دعم كامل</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item timeline-item-reverse" data-animate>
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                        <div class="marker-pulse"></div>
-                    </div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-number">04</div>
-                        <div class="timeline-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                <polyline points="22 4 12 14.01 9 11.01"/>
-                            </svg>
-                        </div>
-                        <h3 data-en="Follow-up & Results" data-ar="المتابعة والنتائج">المتابعة والنتائج</h3>
-                        <p data-en="Continuous monitoring and support to ensure optimal crop growth"
-                           data-ar="متابعة ودعم مستمر لضمان نمو مثالي للمحاصيل">
-                            متابعة ودعم مستمر لضمان نمو مثالي للمحاصيل
-                        </p>
-                        <ul class="timeline-features">
-                            <li data-en="Regular Checkups" data-ar="فحوصات دورية">✓ فحوصات دورية</li>
-                            <li data-en="Progress Reports" data-ar="تقارير تقدم">✓ تقارير تقدم</li>
-                            <li data-en="Guaranteed Results" data-ar="نتائج مضمونة">✓ نتائج مضمونة</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge glass-card" data-en="What We Offer" data-ar="ما نقدمه">ما نقدمه</span>
-                <h2 class="section-title" data-en="Premium Solutions" data-ar="حلول متميزة">
-                    حلول <span class="gradient-text">متميزة</span>
-                </h2>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card glass-card" data-animate>
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
-                    </div>
-                    <h3 data-en="Fast Response" data-ar="استجابة سريعة">استجابة سريعة</h3>
-                    <p data-en="24/7 customer support with instant notifications" data-ar="دعم عملاء على مدار الساعة مع إشعارات فورية">
-                        دعم عملاء على مدار الساعة مع إشعارات فورية
-                    </p>
-                    <div class="feature-badge" data-en="24/7 Support" data-ar="دعم 24/7">دعم 24/7</div>
-                </div>
-
-                <div class="feature-card glass-card" data-animate style="animation-delay: 0.1s">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3 data-en="Premium Quality" data-ar="جودة فائقة">جودة فائقة</h3>
-                    <p data-en="ISO certified products with 98% quality guarantee" data-ar="منتجات معتمدة ISO مع ضمان جودة 98%">
-                        منتجات معتمدة ISO مع ضمان جودة 98%
-                    </p>
-                    <div class="feature-badge" data-en="ISO Certified" data-ar="معتمد ISO">معتمد ISO</div>
-                </div>
-
-                <div class="feature-card glass-card" data-animate style="animation-delay: 0.2s">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
-                    </div>
-                    <h3 data-en="Smart Logistics" data-ar="لوجستيات ذكية">لوجستيات ذكية</h3>
-                    <p data-en="AI-powered delivery tracking and automated routing" data-ar="تتبع التوصيل بالذكاء الاصطناعي والتوجيه الآلي">
-                        تتبع التوصيل بالذكاء الاصطناعي والتوجيه الآلي
-                    </p>
-                    <div class="feature-badge" data-en="AI Powered" data-ar="ذكاء اصطناعي">ذكاء اصطناعي</div>
-                </div>
-
-                <div class="feature-card glass-card" data-animate style="animation-delay: 0.3s">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3 data-en="Eco-Friendly" data-ar="صديق للبيئة">صديق للبيئة</h3>
-                    <p data-en="Sustainable practices with organic alternatives" data-ar="ممارسات مستدامة مع بدائل عضوية">
-                        ممارسات مستدامة مع بدائل عضوية
-                    </p>
-                    <div class="feature-badge" data-en="100% Organic" data-ar="عضوي 100%">عضوي 100%</div>
-                </div>
-
-                <div class="feature-card glass-card" data-animate style="animation-delay: 0.4s">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3 data-en="Expert Team" data-ar="فريق خبراء">فريق خبراء</h3>
-                    <p data-en="Agricultural specialists with 15+ years experience" data-ar="متخصصون زراعيون بخبرة تزيد عن 15 عامًا">
-                        متخصصون زراعيون بخبرة تزيد عن 15 عامًا
-                    </p>
-                    <div class="feature-badge" data-en="15+ Years" data-ar="15+ سنة">15+ سنة</div>
-                </div>
-
-                <div class="feature-card glass-card" data-animate style="animation-delay: 0.5s">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                        </svg>
-                    </div>
-                    <h3 data-en="Data Analytics" data-ar="تحليل البيانات">تحليل البيانات</h3>
-                    <p data-en="Real-time crop monitoring and decision support" data-ar="مراقبة المحاصيل في الوقت الفعلي ودعم القرارات">
-                        مراقبة المحاصيل في الوقت الفعلي ودعم القرارات
-                    </p>
-                    <div class="feature-badge" data-en="Live Monitoring" data-ar="مراقبة مباشرة">مراقبة مباشرة</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Stack Section -->
-    <section id="tech" class="tech-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge glass-card" data-en="Innovation" data-ar="الابتكار">الابتكار</span>
-                <h2 class="section-title" data-en="Advanced Technology" data-ar="تقنيات متقدمة">
-                    تقنيات <span class="gradient-text">متقدمة</span>
-                </h2>
-                <p class="section-desc" data-en="We leverage cutting-edge technology for sustainable agriculture" data-ar="نستخدم أحدث التقنيات للزراعة المستدامة">
-                    نستخدم أحدث التقنيات للزراعة المستدامة
-                </p>
-            </div>
-
-            <div class="tech-grid">
-                <div class="tech-card glass-card" data-animate>
-                    <div class="tech-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l4.2 4.2M23 12h-6m-6 0H1m18.2 5.2l-4.2-4.2m0-6l4.2-4.2"/>
-                        </svg>
-                    </div>
-                    <h3 data-en="IoT Sensors" data-ar="أجهزة استشعار IoT">أجهزة استشعار IoT</h3>
-                    <p data-en="Smart sensors for soil and crop monitoring" data-ar="أجهزة استشعار ذكية لمراقبة التربة والمحاصيل">
-                        أجهزة استشعار ذكية لمراقبة التربة والمحاصيل
-                    </p>
-                </div>
-
-                <div class="tech-card glass-card" data-animate style="animation-delay: 0.1s">
-                    <div class="tech-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
-                            <polyline points="7.5 19.79 7.5 14.6 3 12"/>
-                            <polyline points="21 12 16.5 14.6 16.5 19.79"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
-                    </div>
-                    <h3 data-en="AI Analytics" data-ar="تحليلات الذكاء الاصطناعي">تحليلات AI</h3>
-                    <p data-en="Machine learning for yield prediction" data-ar="التعلم الآلي للتنبؤ بالإنتاج">
-                        التعلم الآلي للتنبؤ بالإنتاج
-                    </p>
-                </div>
-
-                <div class="tech-card glass-card" data-animate style="animation-delay: 0.2s">
-                    <div class="tech-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
-                            <line x1="16" y1="8" x2="2" y2="22"/>
-                            <line x1="17.5" y1="15" x2="9" y2="15"/>
-                        </svg>
-                    </div>
-                    <h3 data-en="Drone Technology" data-ar="تقنية الطائرات">تقنية الطائرات</h3>
-                    <p data-en="Aerial surveying and precision spraying" data-ar="المسح الجوي والرش الدقيق">
-                        المسح الجوي والرش الدقيق
-                    </p>
-                </div>
-
-                <div class="tech-card glass-card" data-animate style="animation-delay: 0.3s">
-                    <div class="tech-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                        </svg>
-                    </div>
-                    <h3 data-en="Mobile App" data-ar="تطبيق موبايل">تطبيق موبايل</h3>
-                    <p data-en="On-the-go farm management system" data-ar="نظام إدارة المزرعة المتنقل">
-                        نظام إدارة المزرعة المتنقل
-                    </p>
-                </div>
-            </div>
-
-            <div class="tech-showcase glass-card" data-animate>
-                <div class="showcase-visual">
-                    <div class="tech-orbit">
-                        <div class="orbit-ring"></div>
-                        <div class="orbit-ring" style="animation-delay: -2s"></div>
-                        <div class="orbit-ring" style="animation-delay: -4s"></div>
-                        <div class="orbit-center">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                <path d="M2 17l10 5 10-5"/>
-                                <path d="M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-content">
-                    <h3 data-en="Integrated Platform" data-ar="منصة متكاملة">منصة متكاملة</h3>
-                    <p data-en="All-in-one solution connecting farmers, suppliers, and experts in real-time"
-                       data-ar="حل متكامل يربط المزارعين والموردين والخبراء في الوقت الفعلي">
-                        حل متكامل يربط المزارعين والموردين والخبراء في الوقت الفعلي
-                    </p>
-                    <ul class="showcase-features">
-                        <li data-en="Real-time Updates" data-ar="تحديثات فورية">✓ تحديثات فورية</li>
-                        <li data-en="Smart Notifications" data-ar="إشعارات ذكية">✓ إشعارات ذكية</li>
-                        <li data-en="Cloud Storage" data-ar="تخزين سحابي">✓ تخزين سحابي</li>
-                        <li data-en="Data Security" data-ar="أمان البيانات">✓ أمان البيانات</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <div class="container">
-            <div class="cta-content glass-card" data-animate>
-                <div class="cta-icon">
-                    <div class="pulse-circle"></div>
-                    <div class="pulse-circle" style="animation-delay: 0.5s"></div>
-                    <div class="pulse-circle" style="animation-delay: 1s"></div>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                </div>
-                <h2 data-en="Ready to Grow Your Success?" data-ar="جاهز لتنمية نجاحك؟">
-                    جاهز لتنمية <span class="gradient-text">نجاحك</span>؟
-                </h2>
-                <p data-en="Connect with our team today and start your journey towards sustainable agriculture"
-                   data-ar="تواصل مع فريقنا اليوم وابدأ رحلتك نحو الزراعة المستدامة">
-                    تواصل مع فريقنا اليوم وابدأ رحلتك نحو الزراعة المستدامة
-                </p>
-
-                <div class="cta-actions">
-                    <a href="https://wa.me/201113903070" target="_blank" class="cta-btn cta-btn-whatsapp">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                        </svg>
-                        <span data-en="WhatsApp" data-ar="واتساب">واتساب</span>
-                    </a>
-
-                    <a href="https://moh222salah.github.io/cv" target="_blank" class="cta-btn cta-btn-portfolio">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                        <span data-en="Our Portfolio" data-ar="معرض أعمالنا">معرض أعمالنا</span>
-                    </a>
-                </div>
-
-                <div class="cta-info">
-                    <div class="info-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
-                        </svg>
-                        <span data-en="Cairo, Egypt" data-ar="القاهرة، مصر">القاهرة، مصر</span>
-                    </div>
-                    <div class="info-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        <span>info@pyramids-agri.com</span>
-                    </div>
-                    <div class="info-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                        <span data-en="Mon - Sat: 8AM - 6PM" data-ar="الإثنين - السبت: 8ص - 6م">الإثنين - السبت: 8ص - 6م</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <svg class="logo-icon" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M25 5L45 15V35L25 45L5 35V15L25 5Z" stroke="currentColor" stroke-width="2" fill="url(#logoGradient2)"/>
-                            <path d="M25 15L35 20V30L25 35L15 30V20L25 15Z" fill="currentColor" opacity="0.6"/>
-                            <defs>
-                                <linearGradient id="logoGradient2" x1="5" y1="5" x2="45" y2="45">
-                                    <stop offset="0%" stop-color="#2D5016"/>
-                                    <stop offset="100%" stop-color="#6B9F4C"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        <span data-en="Pyramids" data-ar="بيراميدز">بيراميدز</span>
-                    </div>
-                    <p data-en="Your trusted partner in sustainable agricultural development" data-ar="شريكك الموثوق في التنمية الزراعية المستدامة">
-                        شريكك الموثوق في التنمية الزراعية المستدامة
-                    </p>
-                </div>
-
-                <div class="footer-section">
-                    <h4 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
-                        <li><a href="#about" data-en="About" data-ar="من نحن">من نحن</a></li>
-                        <li><a href="#timeline" data-en="Process" data-ar="المراحل">المراحل</a></li>
-                        <li><a href="#features" data-en="Features" data-ar="المميزات">المميزات</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4 data-en="Services" data-ar="الخدمات">الخدمات</h4>
-                    <ul class="footer-links">
-                        <li><a href="#" data-en="Organic Fertilizers" data-ar="أسمدة عضوية">أسمدة عضوية</a></li>
-                        <li><a href="#" data-en="Soil Testing" data-ar="فحص التربة">فحص التربة</a></li>
-                        <li><a href="#" data-en="Consultation" data-ar="استشارات">استشارات</a></li>
-                        <li><a href="#" data-en="Training" data-ar="تدريب">تدريب</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4 data-en="Connect" data-ar="تواصل معنا">تواصل معنا</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                            </svg>
-                        </a>
-                        <a href="https://wa.me/201113903070" target="_blank" aria-label="WhatsApp">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p data-en="© 2024 Pyramids Agricultural Company. All rights reserved." data-ar="© 2024 شركة بيراميدز للأسمدة الزراعية. جميع الحقوق محفوظة.">
-                    © 2024 شركة بيراميدز للأسمدة الزراعية. جميع الحقوق محفوظة.
-                </p>
-                <div class="footer-badges">
-                    <span class="badge" data-en="ISO Certified" data-ar="معتمد ISO">معتمد ISO</span>
-                    <span class="badge" data-en="Eco-Friendly" data-ar="صديق للبيئة">صديق للبيئة</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
